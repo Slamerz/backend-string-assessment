@@ -8,6 +8,9 @@
 
 # Additional basic string exercises
 
+import re
+
+
 # D. verbing
 # Given a string, if its length is at least 3,
 # add 'ing' to its end.

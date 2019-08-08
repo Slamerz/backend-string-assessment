@@ -21,8 +21,12 @@ based on your knowledge of Python strings, indexing, slicing, and methods.
 6. Copy/Paste the URL **link to your PR** as your assignment submission.
 7. Your grader will post code review comments inline with your code, in your github account. Be sure to respond to any comments and make requested changes. **RESUBMIT** a new link to your PR after making changes.  This is the code review iteration cycle.
 
-# Extra Points:
-Feel free to edit the README.md (this very text itself) of this assignment and enhance it.  The README is the front-most facing page of your work, so it should make a good impression.  As assigments get more complex, you will be expected to create READMEs with sufficient detail to capture all aspects of how your code is intended to be used: Cloning, dependencies, gotchas, quick-starts, deployment notes, etc.
+# How to install:
+**clone the repo**
+`git clone https://github.com/your/awesome-project.git`
+`cd awesome-project/`
+now install dependencies
+`packagemanager install` ex. `pip install`
 
 As a reference, see this:
 [README Best Practices template](https://github.com/jehna/readme-best-practices/blob/master/README-default.md)

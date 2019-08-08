@@ -15,6 +15,8 @@
 # It's ok if you do not complete all the functions, and there
 # are some additional functions to try in string2.py.
 
+import re
+
 
 # A. donuts
 # Given an int count of a number of donuts, return a string

@@ -22,7 +22,9 @@ import re
 
 def verbing(s):
     """Your code goes here.  Edit this docstring."""
-    return
+    if len(s) < 3:
+        return s
+    return s + ("ly" if re.findall(r"(ing\b)", s) else "ing")
 
 
 # E. not_bad
@@ -35,7 +37,7 @@ def verbing(s):
 # This dinner is good!
 def not_bad(s):
     """Your code goes here.  Edit this docstring."""
-    return
+    return re.sub(r"(not.*bad)", "good", s)
 
 
 # F. front_back
@@ -47,9 +49,11 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
     """Your code goes here.  Edit this docstring."""
-    return
-
-
+    def get_half(string):
+        return (len(string) / 2) + 1 if len(string) % 2 else len(string)/2
+    a_half = get_half(a)
+    b_half = get_half(b)
+    return a[:a_half]+b[:b_half]+a[a_half:]+b[b_half:]
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):

@@ -8,6 +8,9 @@
 
 # Additional basic string exercises
 
+import re
+
+
 # D. verbing
 # Given a string, if its length is at least 3,
 # add 'ing' to its end.
@@ -18,8 +21,10 @@
 
 
 def verbing(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """Adding ing or ly to each word"""
+    if len(s) < 3:
+        return s
+    return s + ("ly" if re.findall(r"(ing\b)", s) else "ing")
 
 
 # E. not_bad
@@ -31,8 +36,8 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """Replace a double negative with "good" """
+    return re.sub(r"(not.*bad)", "good", s)
 
 
 # F. front_back
@@ -42,15 +47,18 @@ def not_bad(s):
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
+
 def front_back(a, b):
-    """Your code goes here.  Edit this docstring."""
-    return
-
-
+    """Place the front half of each word together and combine with the last half combined"""
+    def get_half(string):
+        return (len(string) / 2) + 1 if len(string) % 2 else len(string)/2
+    a_half = get_half(a)
+    b_half = get_half(b)
+    return a[:a_half]+b[:b_half]+a[a_half:]+b[b_half:]
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):
-    """Your code goes here.  Edit this docstring."""
+    """Test the given function with the results"""
     if got == expected:
         prefix = ' OK '
     else:
@@ -61,7 +69,7 @@ def test(got, expected):
 # main() calls the above functions with interesting inputs,
 # using the above test() to check if the result is correct or not.
 def main():
-    """Your code goes here.  Edit this docstring."""
+    """Testing all of the functions"""
     print('verbing')
     test(verbing('hail'), 'hailing')
     test(verbing('swiming'), 'swimingly')
